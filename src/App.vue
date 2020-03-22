@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <topbar></topbar>
-    <main_content channel-name="New Channel" name="Emon" v-bind:myplaylists="playlists"></main_content>
+    <main_content v-bind:student-list="students" v-bind:test="test" channel-name="New Channel" name="Emon" v-bind:myplaylists="playlists"></main_content>
+    <student_component v-bind:test="test" v-bind:student-list="students"></student_component>
     <footer_componemet></footer_componemet>
   </div>
 </template>
@@ -10,12 +11,14 @@
 import Header from './components/Header.vue'
 import Content from './components/Content.vue'
 import Footer from './components/Footer.vue'
+import Student from './components/Student.vue'
 export default {
   name: 'App',
   components: {
     topbar: Header,
     main_content: Content,
     footer_componemet: Footer,
+    student_component: Student,
   },
   data(){
     return {
@@ -48,6 +51,9 @@ export default {
 
                 },
             ],
+
+      students: ['Emon','Hasan','Sakib','Sumon'],
+      test: 'This is String Type Value',
     }
   }
   

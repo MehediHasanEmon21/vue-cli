@@ -7,6 +7,14 @@
     <ul>
         <li v-for="playlist in myplaylists" v-bind:key="playlist.index"><a v-bind:href="playlist.link" v-bind:title="playlist.title" target="_blank">{{playlist.name}}</a></li>
     </ul>
+
+     <h3>Student List</h3>
+     <h4>{{ test }}</h4>
+    <ul>
+        <li v-for="st in studentList" v-bind:key="st.index">{{ st }}</li>
+    </ul>
+    <button @click="deleteStudent">Delete Student</button>
+
 </div>
     
 </template>
@@ -16,6 +24,9 @@
 export default {
     name: 'Content',
     props: {
+        studentList: {
+            type: Array
+        },
         name: {
             type: String,
         },
@@ -24,6 +35,9 @@ export default {
         },
         channelName: {
             type: String
+        },
+        test: {
+            type: String
         }
     },
     data(){
@@ -31,6 +45,11 @@ export default {
 
             
 
+        }
+    },
+    methods: {
+        deleteStudent(){
+            this.studentList.pop()
         }
     }
 }
