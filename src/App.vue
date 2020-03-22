@@ -1,7 +1,8 @@
 <template>
   <div id="app">
 
-    <student_component v-bind:message="message" @updateValue="updateValueInParent($event)"></student_component>
+    <student_component></student_component>
+    <employee></employee>
 
   </div>
 </template>
@@ -9,20 +10,20 @@
 <script>
 
 import Student from './components/Student.vue'
+import Employee from './components/Employee.vue'
 export default {
   name: 'App',
   components: {
     student_component: Student,
+    employee: Employee,
   },
   data(){
     return {
-      message: 'This is data from Parent Component',
+      
     }
   },
   methods: {
-    updateValueInParent(updateValue){
-      this.message = updateValue;
-    }
+    
   }
   
 }

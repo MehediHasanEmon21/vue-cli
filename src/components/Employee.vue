@@ -2,7 +2,7 @@
 
     <div>
        
-        <button @click="sendText">Change text</button>
+        <h3>{{ message }}</h3>
 
     </div>
     
@@ -15,18 +15,19 @@ export default {
     props:{
         
     },
-    name: 'Student',
+    name: 'Employee',
     data(){
         return {
-            
+            message: 'default message'
         }
     },
     methods: {
-        sendText(){
-
-            EventBus.$emit("emmitedData", "This is simple data which is passed")
-
-        }
+        
+    },
+    mounted(){
+        EventBus.$on("emmitedData", data => {
+            this.message = data
+        })
     }
     
 }
