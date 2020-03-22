@@ -2,11 +2,8 @@
 
     <div>
 
-        <h3>Student List</h3>
-        <h4>{{ test }}</h4>
-        <ul>
-            <li v-for="st in studentList" v-bind:key="st.index">{{ st }}</li>
-        </ul>
+        <h3>{{message}}</h3>
+       
         <button @click="changeText">Change text</button>
 
     </div>
@@ -17,10 +14,7 @@
 export default {
 
     props:{
-        studentList: {
-            type: Array
-        },
-        test: {
+        message: {
             type: String
         }
     },
@@ -32,7 +26,7 @@ export default {
     },
     methods: {
         changeText(){
-            this.test = 'message is change'
+            this.$emit('updateValue','message is updated')
         }
     }
     
