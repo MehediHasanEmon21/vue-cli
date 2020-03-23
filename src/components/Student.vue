@@ -1,15 +1,37 @@
 <template>
 
     <div>
-       
-        <button @click="sendText">Change text</button>
+       <slot></slot>
+       <div id="form-header">
+
+           <slot name="form-header"></slot>
+
+       </div>
+
+        <div id="form-elements">
+
+           <slot name="form-elements"></slot>
+
+       </div>
+
+        <div id="form-button">
+
+           <slot name="form-button"></slot>
+
+       </div>
+
+        <div id="form-footer">
+
+           <slot name="form-footer"></slot>
+
+       </div>
 
     </div>
     
 </template>
 
 <script>
-import {EventBus} from '../main'
+
 export default {
 
     props:{
@@ -22,11 +44,7 @@ export default {
         }
     },
     methods: {
-        sendText(){
-
-            EventBus.$emit("emmitedData", "This is simple data which is passed")
-
-        }
+       
     }
     
 }
