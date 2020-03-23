@@ -1,13 +1,13 @@
 <template>
 
     <div id="posts">
-       
+        <a href="" :title="title | makeUpper">Go Google</a>
         <h3>Showing Post</h3>
 
         <div v-for="post in posts" :key="post.index">
 
-            <h2>{{ post.title }}</h2>
-            <p v-format>{{ post.body }}</p>
+            <h2>{{ post.title | makeUpper }}</h2>
+            <p v-format>{{ post.body | cutText }}</p>
 
         </div>
 
@@ -26,11 +26,19 @@ export default {
     name: 'Post',
     data(){
         return {
-          posts: []
+          posts: [],
+          title: 'go to google'
         }
     },
     methods: {
         
+    },
+
+    filters: {
+
+        cutText(value){
+            return value.slice(0,70)+'....'
+        }
     },
 
     

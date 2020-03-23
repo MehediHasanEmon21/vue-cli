@@ -10,6 +10,10 @@ Vue.directive('format',{
   }
 })
 
+Vue.filter('makeUpper',function(value){
+  return value.toUpperCase();
+})
+
 Vue.config.productionTip = false
 
 new Vue({
