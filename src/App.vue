@@ -1,28 +1,29 @@
 <template>
   <div id="app">
 
-    <employee></employee>
+    <post></post>
 
   </div>
 </template>
 
 <script>
  
-import Employee from './components/Employee.vue'
+import Post from './components/Post.vue'
 
 export default {
-  name: 'App',
+  name: 'Post',
   components: {
-    employee: Employee,
+    post: Post,
   },
   data(){
     return {
-      
+      posts: []
     }
   },
   methods: {
     
-  }
+  },
+
   
 }
 </script>
