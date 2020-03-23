@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div>
 
-    <router-view></router-view>
+    <h1>Product Page</h1>
 
   </div>
 </template>
@@ -11,7 +11,7 @@
 
 
 export default {
-  name: 'Post',
+  name: 'Home',
   data(){
     return {
       
@@ -24,5 +24,3 @@ export default {
   
 }
 </script>
-
-

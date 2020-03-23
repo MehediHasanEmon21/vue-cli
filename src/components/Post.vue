@@ -17,9 +17,11 @@
 </template>
 
 <script>
-
+import filterMixin from '../mixin/filter';
 export default {
-
+    mixins: [
+        filterMixin
+    ],
     props:{
         
     },
@@ -34,12 +36,7 @@ export default {
         
     },
 
-    filters: {
-
-        cutText(value){
-            return value.slice(0,70)+'....'
-        }
-    },
+    
 
     
   created(){
