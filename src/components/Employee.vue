@@ -2,14 +2,24 @@
 
     <div>
        
-        <h3>{{ message }}</h3>
+            <h3>Employee Form</h3>
+
+        <p>
+            <label for="">Employee Name</label>
+            <input type="text">
+        </p>
+
+        <p>
+            <label for="">Mobile</label>
+            <input type="number">
+        </p>
 
     </div>
     
 </template>
 
 <script>
-import {EventBus} from '../main'
+
 export default {
 
     props:{
@@ -24,11 +34,7 @@ export default {
     methods: {
         
     },
-    mounted(){
-        EventBus.$on("emmitedData", data => {
-            this.message = data
-        })
-    }
+  
     
 }
 </script>

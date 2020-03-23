@@ -1,30 +1,18 @@
 <template>
 
     <div>
-       <slot></slot>
-       <div id="form-header">
+       
+        <h3>Student Form</h3>
 
-           <slot name="form-header"></slot>
+        <p>
+            <label for="">Student Name</label>
+            <input type="text">
+        </p>
 
-       </div>
-
-        <div id="form-elements">
-
-           <slot name="form-elements"></slot>
-
-       </div>
-
-        <div id="form-button">
-
-           <slot name="form-button"></slot>
-
-       </div>
-
-        <div id="form-footer">
-
-           <slot name="form-footer"></slot>
-
-       </div>
+        <p>
+            <label for="">Email</label>
+            <input type="text">
+        </p>
 
     </div>
     
