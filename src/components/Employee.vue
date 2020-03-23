@@ -19,11 +19,23 @@
             <input type="text" v-model.lazy="employee.designation">
         </p>
 
+        <p>
+            <input type="checkbox" value="Developer" v-model="employee.posts">Developer
+            <input type="checkbox" value="Designer" v-model="employee.posts">Designer
+            <input type="checkbox" value="Writer" v-model="employee.posts">Writer
+            <input type="checkbox" value="Broker" v-model="employee.posts">Broker
+        </p>
+
         <h3>Preview</h3>
 
         <p>Name : {{employee.name}}</p>
         <p>Mobile  : {{employee.mobile}}</p>
         <p>Designation : {{employee.designation}}</p>
+        <p>Post :
+            <ul>
+                <li v-for="post in employee.posts" :key="post.index">{{ post }}</li>
+            </ul>
+        </p>
 
     </div>
     
@@ -43,6 +55,7 @@ export default {
                 name: '',
                 mobile: '',
                 designation: '',
+                posts: []
             }
         }
     },
